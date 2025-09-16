@@ -116,7 +116,7 @@ String cardText = homePage.getCard(1).find(byClassName("card__title")).getText()
 ```
 
 ## 📜 Лицензия
-MIT License
+MIT License. Полный текст доступен в файле [LICENSE](https://github.com/Versaria/qa-mesto-selenide-test?tab=License-1-ov-file).
 
 ## 🤝 Как внести вклад
 1. Форкните репозиторий
