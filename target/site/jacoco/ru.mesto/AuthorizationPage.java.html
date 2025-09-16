@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AuthorizationPage.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">qa-mesto-selenide-test</a> &gt; <a href="index.source.html" class="el_package">ru.mesto</a> &gt; <span class="el_source">AuthorizationPage.java</span></div><h1>AuthorizationPage.java</h1><pre class="source lang-java linenums">package ru.mesto;
+
+import com.codeborne.selenide.Condition;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.page;
+
+/**
+ * Класс страницы авторизации.
+ * Отвечает за процесс входа пользователя в систему.
+ * Содержит методы для заполнения полей email и password и выполнения входа.
+ */
+<span class="fc" id="L12">public class AuthorizationPage {</span>
+
+    /**
+     * Выполняет авторизацию пользователя
+     * @param email - электронная почта пользователя
+     * @param password - пароль пользователя
+     * @return объект домашней страницы после успешной авторизации
+     */
+    public HomePage login(String email, String password) {
+        // Заполнение поля email с проверкой видимости элемента
+<span class="fc" id="L22">        $(&quot;#email&quot;).shouldBe(Condition.visible).setValue(email);</span>
+        // Заполнение поля password с проверкой видимости элемента
+<span class="fc" id="L24">        $(&quot;#password&quot;).shouldBe(Condition.visible).setValue(password);</span>
+        // Клик по кнопке авторизации с проверкой активности элемента
+<span class="fc" id="L26">        $(&quot;.auth-form__button&quot;).shouldBe(Condition.enabled).click();</span>
+        // Возврат экземпляра домашней страницы
+<span class="fc" id="L28">        return page(HomePage.class);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
